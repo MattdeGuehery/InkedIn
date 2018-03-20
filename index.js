@@ -6,30 +6,13 @@ app.controller('loginForm', function($scope) {
     $scope.email = '';
     $scope.password = '';
 
-    var loginForm = [
-        {
-            label: "First Name",
-            type: "text",
-            variable: $scope.firstName
-        },
-        {
-            label: "Last Name",
-            type: "text",
-            variable: $scope.lastName        
-        },
-        {
-            label: "Email",
-            type: "email",
-            variable: $scope.email        
-        },
-        {
-            label: "Password",
-            type: "password",
-            variable: $scope.password
-        },
-    ];
-
-    $scope.loginForm = loginForm;
+    $scope.submitForm = function() {
+        if ($scope.loginForm.$valid) {
+            console.log('Form is valid');
+        } else {
+            console.log('Form is invalid');
+        }
+    };
 });
 
 app.directive("formDirective", function() {

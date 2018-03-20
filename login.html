@@ -1,33 +1,32 @@
-<form name='loginForm'>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">First Name:</label>
-            <div class="col-sm-10">
-                <input class="form-control" type="text" ng-model="firstName">
-            </div>
+<form name='loginForm' ng-submit="submitForm()">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">First Name:</label>
+        <div class="col-sm-10" ng-class="{ 'has-error': loginForm.firstName.$invalid && loginForm.firstName.$dirty && !loginForm.$pristine }">
+            <input class="form-control" type="text" name="firstName" ng-model="firstName" required>
         </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Last Name:</label>
-            <div class="col-sm-10">
-                <input class="form-control" type="text" ng-model="lastName">
-            </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Last Name:</label>
+        <div class="col-sm-10" ng-class="{ 'has-error': loginForm.lastName.$invalid && loginForm.lastName.$dirty && !loginForm.$pristine }">
+            <input class="form-control" type="text" name="lastName" ng-model="lastName" required>
         </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Email:</label>
-            <div class="col-sm-10">
-                <input class="form-control" type="text" ng-model="email">
-            </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Email:</label>
+        <div class="col-sm-10" ng-class="{ 'has-error': loginForm.email.$invalid && loginForm.email.$dirty && !loginForm.$pristine }">
+            <input class="form-control" type="email" name="email" ng-model="email" required>
         </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Password:</label>
-            <div class="col-sm-10">
-                <input class="form-control" type="password" ng-model="password">
-            </div>
-          
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Password:</label>
+        <div class="col-sm-10" ng-class="{ 'has-error': loginForm.password.$invalid && loginForm.password.$dirty && !loginForm.$pristine }">
+            <input class="form-control" type="password" name="password" ng-model="password" minlength="6" required>
         </div>
-        <div class="form-group">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-10">
-                <button class="btn btn-primary btn-block">Join Now</button>
-            </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <button class="btn btn-primary btn-block">Join Now</button>
         </div>
-    </form>
+    </div>
+</form>
